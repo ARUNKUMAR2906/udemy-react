@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Gabarito', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: solid black .5px;
+    gap: 10px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar__s1__title{
+    color: #a435f0;
+}
+
+.navbar__s2{
+    padding: 10px;
+    border: solid black 1px;
+    border-radius: 3em;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar__s2 input{
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.navbar__s2 input:focus{
+    outline: none;
+}
+.navbar__s3{
+    display: flex;
+    align-items: center;
+    gap:  10px;
+    cursor: pointer;
+}
+
+.navbar__s4{
+    display: none;
+}
+
+.mylearning{
+    position: relative;
+}
+
+.mylearning__popup{
+    width: 100px;
+    position: absolute;
+    top: 150%;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+    border: solid black 1px;
+    display: none;
+    
+}
+
+.mylearning:hover .mylearning__popup{
+    display: block;
+}
+
+.categories{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    border-bottom: solid black 1px;
+}
+
+.categories p{
+    border-radius: 3em;
+    padding: 10px;
+    background-color: #a435f0;
+    color: whitesmoke;
+    cursor: pointer;
+    border: solid #a435f0 1px;
+}
+
+.categories p:hover{
+    transition: 1s;
+    background-color: transparent;
+    color: black;
+    border: #a435f0 solid 1px;
+}
+
+.sale-img{
+    position: relative;
+}
+.sale-img img{
+    width: 100%;
+}
+
+.sale-img__offer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    border: solid black 2px;
+    padding: 15px;
+    background-color: white;
+    opacity: 0;
+    animation-name: zoom;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+.recommended,.popular{
+    padding: 50px;
+}
+
+.recommended__container,.popular__container{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+}
+
+.course-card{
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin-top: 10px;
+}
+
+.course-card img{
+    height: 70%;
+    width: 100%;
+}
+
+.topics {
+    padding: 50px;
+}
+
+.topics__container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.topics__container p{
+    border: solid gray 1px;
+    padding: 10px;
+    flex-grow: 1;
+    flex-basis: 25%;
+    cursor: pointer;
+}
+
+.topics__container p:hover{
+    background-color: gray;
+    color: black;
+}
+
+.footer{
+    padding-left: 50px;
+    padding-top: 20px;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.footer__one{
+    display: flex;
+    gap: 20px;
+}
+.footer__one p{
+    margin: 15px;
+    cursor: pointer;
+}
+.footer__two{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+@media screen and (max-width:800px) {
+    body {
+        font-size: 12px;
+    }
+    
+}
+
+@media screen and (max-width:600px){
+
+    body{
+        font-size: 10px;
+    }
+
+    .course-card{
+        flex-basis: 40%;
+    }
+    .categories{
+        display: none;
+    }
+
+    .navbar__s2,.navbar__s3{
+        display: none;
+    }
+
+    .navbar__s4{
+        display: block;
+    }
+
+    .sale-img__offer{
+        top: 10%;
+        left: 5%;
+    }
+
+
+}
+
+@media screen and (max-width:375px) {
+    .course-card {
+        flex-basis: 100%;
+    }
+
+    .topics__container p{
+        flex-basis: 50%;
+    }
+    .sale-img__offer{
+        font-size: 7.5px;
+        padding: 10px;
+        width: 35%;
+    }
+}
